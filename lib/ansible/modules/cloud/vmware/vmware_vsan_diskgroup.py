@@ -196,7 +196,7 @@ class VmwareVsanDiskGroup(object):
 
     def vsan_process_state(self):
         # object to choose operation
-        if self.module.check_mode:
+        if not self.module.check_mode:
             vsan_states = {
                 'absent': {
                     'absent': self.state_exit_unchanged,
